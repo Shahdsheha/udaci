@@ -3,6 +3,7 @@ version: 2.1
 commands:
   install_awscli:
     description: Install AWS CLI v2
+    type: String
     steps:
       - run:
         name: Install AWS CLI v2
@@ -12,6 +13,7 @@ commands:
           sudo ./aws/install
   install_ansible:
     description: Install Ansible
+    type: String
     steps:
       - run:
           name: Install Ansible
