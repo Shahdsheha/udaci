@@ -198,6 +198,13 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
+          name: Install Dependencies
+          working_directory: ./.circleci/ansible
+          command: |
+            pip install awscli
+            apk add --update curl tar gzip npm nodejs
+            apk add --update ansible 
+      - run:
           name: Configure Server
           command: |
             cd .circleci/ansible
