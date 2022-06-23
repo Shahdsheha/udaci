@@ -16,8 +16,10 @@
 - name: "Install nodejs"
   apt:
     update_cache: yes
-    name: nodejs
-    state: present
+    name: "{{ item }}"
+  with_items:
+    - nodejs 
+    - npm
 
 - name: "Install NPM-distributed command-line tools"
   npm:
